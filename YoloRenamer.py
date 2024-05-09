@@ -9,14 +9,11 @@ import os
 import shutil
 
 def rename_images_and_labels(images_dir, labels_dir, nombreraiz):
-    # Obtener la lista de archivos en los directorios de imágenes y etiquetas
+    # Obtener la lista de archivos en los directorios de imagenes y etiquetas
     image_files = [f for f in os.listdir(images_dir) if os.path.isfile(os.path.join(images_dir, f))]
     label_files = [f for f in os.listdir(labels_dir) if os.path.isfile(os.path.join(labels_dir, f))]
     
-    # Filtrar archivos de imágenes y etiquetas correspondientes
-    # image_files = [f for f in image_files if f.split('.')[0] + '.txt' in label_files]
-    
-    # Ordenar archivos para garantizar consistencia en la numeración
+    # Ordenar archivos para garantizar consistencia en la numeracion
     image_files.sort()
     
     # Renombrar archivos
@@ -24,7 +21,7 @@ def rename_images_and_labels(images_dir, labels_dir, nombreraiz):
         # Verificar si existe una etiqueta correspondiente
         label_file = image_file.split('.')[0] + '.txt'
         
-        # Obtener la extensión del archivo de imagen original
+        # Obtener la extension del archivo de imagen original
         image_ext = os.path.splitext(image_file)[1]
         
         # Construir el nuevo nombre de archivo
